@@ -1,13 +1,11 @@
 /**
  * LinkedInMCP - Advanced LinkedIn API Integration
  * 
- * @author Dishant Kumar
  * @description Innovative MCP server for intelligent LinkedIn data interactions
- * @created 2025
  * @version 1.0.0
  * 
  * This project represents a groundbreaking approach to LinkedIn API integration,
- * developed to provide developers with a powerful, context-aware interaction layer.
+ * providing developers with a powerful, context-aware interaction layer.
  */
 
 import { config } from 'dotenv';
@@ -22,7 +20,7 @@ config();
 
 /**
  * LinkedInMCP Server - Core integration class
- * Developed by Dishant Kumar to revolutionize LinkedIn data interactions
+ * Revolutionizing LinkedIn data interactions
  */
 class LinkedInMcpServer {
   private server: McpServer;
@@ -30,7 +28,7 @@ class LinkedInMcpServer {
   private auth: LinkedInAuth;
 
   constructor() {
-    // Innovative authentication approach
+    // Advanced authentication approach
     this.auth = new LinkedInAuth();
     
     // Advanced client initialization
@@ -38,7 +36,7 @@ class LinkedInMcpServer {
 
     // MCP server instantiation with custom branding
     this.server = new McpServer({
-      name: "dishant-linkedin-mcp-server",
+      name: "linkedin-mcp-server",
       version: "1.0.0"
     });
 
@@ -48,36 +46,35 @@ class LinkedInMcpServer {
 
   // Rest of the code remains the same as previous implementation
 
-  // Add a unique method to showcase the creator's innovation
-  private addCreatorSignature() {
+  // Add a unique method to showcase innovative design
+  private addServerSignature() {
     console.log(`
     ╔══════════════════════════════════════════╗
-    ║       LinkedInMCP by Dishant Kumar       ║
-    ║   Revolutionizing Professional Network   ║
-    ║            Data Interactions             ║
+    ║       LinkedInMCP - Professional         ║
+    ║   Network Data Interaction Framework     ║
     ╚══════════════════════════════════════════╝
     `);
   }
 
   // Method to start the server with a creative touch
   async start() {
-    // Display creator's signature
-    this.addCreatorSignature();
+    // Display server signature
+    this.addServerSignature();
 
-    // Authenticate with innovative approach
+    // Authenticate with advanced approach
     await this.auth.authenticate();
 
     const transport = new StdioServerTransport();
     await this.server.connect(transport);
-    console.error("🚀 LinkedInMCP Server Initialized by Dishant Kumar");
+    console.error("🚀 LinkedInMCP Server Initialized");
   }
 }
 
-// Main execution with creator's personal mark
+// Main execution with innovative approach
 async function main() {
   console.log(`
   ╭─────────────────────────────────────────╮
-  │ LinkedInMCP - Innovated by Dishant Kumar│
+  │ LinkedInMCP - Professional Network MCP   │
   ╰─────────────────────────────────────────╯
   `);
 
@@ -89,7 +86,7 @@ main().catch(error => {
   console.error(`
   ╔══════════════════════════════════════════╗
   ║ LinkedInMCP Encountered an Error         ║
-  ║ Developed with ❤️ by Dishant Kumar       ║
+  ║ Professional Network Integration Failed  ║
   ╚══════════════════════════════════════════╝
   `, error);
   process.exit(1);
