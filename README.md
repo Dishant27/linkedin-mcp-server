@@ -2,11 +2,11 @@
 
 ## 🚀 Project Background
 
-**LinkedInMCP** is an innovative Model Context Protocol (MCP) server developed by Dishant Kumar, designed to transform how developers interact with LinkedIn's API. Born from the need for more flexible and powerful LinkedIn data integration, this project provides a robust, extensible framework for advanced LinkedIn data retrieval and interaction.
+**LinkedInMCP** is an innovative Model Context Protocol (MCP) server designed to transform how developers interact with LinkedIn's API. Born from the need for more flexible and powerful LinkedIn data integration, this project provides a robust, extensible framework for advanced LinkedIn data retrieval and interaction.
 
-## 🌟 Creator's Vision
+## 🌟 Project Vision
 
-As a data enthusiast and software engineer, I (Dishant Kumar) recognized the limitations of traditional LinkedIn API approaches. **LinkedInMCP** is my solution to create a more intelligent, context-aware method of working with professional network data.
+Recognizing the limitations of traditional LinkedIn API approaches, **LinkedInMCP** is a solution to create a more intelligent, context-aware method of working with professional network data.
 
 ## ✨ Key Innovations
 
@@ -54,14 +54,6 @@ npm install
 ```bash
 npm run start
 ```
-
-## 💡 Created By
-
-**Dishant Kumar**
-- Innovator of LinkedInMCP
-- Data Integration Specialist
-- LinkedIn: [Your LinkedIn Profile]
-- GitHub: [@Dishant27](https://github.com/Dishant27)
 
 ## 🤝 Contributing
 
