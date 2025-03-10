@@ -1,0 +1,63 @@
+name: 🚀 Feature Request
+description: Suggest a new feature or enhancement for LinkedInMCP
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Feature Request for LinkedInMCP
+        Thank you for taking the time to suggest a feature! Your input helps improve the project.
+
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Feature Description
+      description: Provide a clear and detailed explanation of the feature you're proposing
+      placeholder: "Describe the feature, its purpose, and potential benefits..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case
+      description: Explain the specific scenario where this feature would be useful
+      placeholder: "As a developer, I want to... so that I can..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: feature-type
+    attributes:
+      label: Feature Type
+      description: What kind of feature is this?
+      options:
+        - New Tool
+        - Enhancement to Existing Tool
+        - Authentication Improvement
+        - Performance Optimization
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution
+      description: If you have ideas about how this feature could be implemented, share them here
+      placeholder: "Outline a potential implementation approach..."
+
+  - type: checkboxes
+    id: contribution-willingness
+    attributes:
+      label: Contribution
+      options:
+        - label: I'm willing to help implement this feature
+        - label: I'm interested in discussing this feature further
+
+  - type: markdown
+    attributes:
+      value: |
+        ## Thank You! 🎉
+        Your feature request will help make LinkedInMCP even better.
