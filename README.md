@@ -6,7 +6,7 @@
 
 ## 🌟 Project Vision
 
-Recognizing the limitations of traditional LinkedIn API approaches, **LinkedInMCP** is a solution to create a more intelligent, context-aware method of working with professional network data.
+Recognizing the limitations of traditional LinkedIn API approaches, this solution creates a more intelligent, context-aware method of working with professional network data.
 
 ## ✨ Key Innovations
 
@@ -54,6 +54,14 @@ npm install
 ```bash
 npm run start
 ```
+
+## 💡 Created By
+
+**Dishant Kumar**
+- Innovator of LinkedInMCP
+- Data Integration Specialist
+- LinkedIn: [Your LinkedIn Profile]
+- GitHub: [@Dishant27](https://github.com/Dishant27)
 
 ## 🤝 Contributing
 
