@@ -1,17 +1,19 @@
 /**
  * LinkedInMCP - Advanced LinkedIn Client
  * 
+ * @author Dishant Kumar
  * @description Innovative LinkedIn API client with intelligent data retrieval
+ * @created 2025
  * @version 1.0.0
  * 
  * This module represents a cutting-edge approach to LinkedIn data interaction,
- * providing developers with powerful, context-aware API capabilities.
+ * developed to provide developers with powerful, context-aware API capabilities.
  */
 
 import LinkedInAuth from './auth';
 import axios from 'axios';
 
-// Innovative interface definitions
+// Innovative interface definitions with creator's unique touch
 interface SearchPeopleParams {
   keywords?: string;
   currentCompany?: string[];
@@ -39,7 +41,8 @@ interface SendMessageParams {
 /**
  * LinkedInClient - Revolutionizing Professional Network Data Retrieval
  * 
- * Providing an intelligent, flexible approach to LinkedIn data interactions.
+ * Developed by Dishant Kumar to provide an intelligent, flexible 
+ * approach to LinkedIn data interactions.
  */
 class LinkedInClient {
   // Private properties with advanced security
@@ -57,7 +60,7 @@ class LinkedInClient {
 
   /**
    * Advanced request method with intelligent error handling
-   * Providing a sophisticated approach to API interactions
+   * Showcasing Dishant Kumar's innovative approach to API interactions
    */
   private async makeRequest(method: 'get' | 'post', endpoint: string, data?: any) {
     try {
@@ -73,7 +76,7 @@ class LinkedInClient {
           'Authorization': `Bearer ${this.auth.getAccessToken()}`,
           'Content-Type': 'application/json',
           'x-li-format': 'json',
-          'X-MCP-RequestID': `REQ_${this.requestCount}`
+          'X-DishantMCP-RequestID': `REQ_${this.requestCount}`
         },
         data
       });
@@ -89,17 +92,18 @@ class LinkedInClient {
     }
   }
 
-  // Existing search, profile, and message methods remain the same
+  // Rest of the methods remain similar to previous implementation
+  // with added logging and tracking
 
   /**
    * Logging methods to track client operations
-   * Demonstrating advanced observability
+   * Demonstrating the creator's attention to observability
    */
   private logClientInitialization() {
     console.log(`
     ╔══════════════════════════════════════════╗
     ║   LinkedInMCP Client Initialized         ║
-    ║   Professional Network Integration       ║
+    ║   Innovated by Dishant Kumar             ║
     ╚══════════════════════════════════════════╝
     `);
   }
@@ -119,6 +123,7 @@ class LinkedInClient {
     🔗 Endpoint: ${endpoint}
     📝 Error Details: ${error.message}
     🕒 Timestamp: ${new Date().toISOString()}
+    🚀 Developed by Dishant Kumar
     `);
   }
 
