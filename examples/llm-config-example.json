@@ -1,0 +1,126 @@
+{
+    "name": "LinkedIn MCP Server Configuration",
+    "version": "1.0.0",
+    "description": "Example configuration for integrating LinkedIn MCP Server with LLMs",
+    "tools": [
+        {
+            "name": "search-people",
+            "description": "Search for LinkedIn profiles with advanced filtering",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "keywords": {
+                        "type": "string",
+                        "description": "Search keywords for profiles",
+                        "examples": [
+                            "machine learning engineer",
+                            "data scientist silicon valley"
+                        ]
+                    },
+                    "currentCompany": {
+                        "type": "array",
+                        "items": {"type": "string"},
+                        "description": "Filter by current company",
+                        "examples": [
+                            ["Google", "Meta", "Amazon"]
+                        ]
+                    },
+                    "industries": {
+                        "type": "array",
+                        "items": {"type": "string"},
+                        "description": "Filter by industries",
+                        "examples": [
+                            ["Technology", "Artificial Intelligence"]
+                        ]
+                    },
+                    "location": {
+                        "type": "string",
+                        "description": "Location filter for profiles",
+                        "examples": [
+                            "San Francisco Bay Area",
+                            "New York City"
+                        ]
+                    }
+                },
+                "required": []
+            }
+        },
+        {
+            "name": "get-profile",
+            "description": "Retrieve detailed LinkedIn profile information",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "publicId": {
+                        "type": "string",
+                        "description": "Public ID of the LinkedIn profile",
+                        "examples": [
+                            "dishant-kumar",
+                            "johndoe-tech"
+                        ]
+                    },
+                    "urnId": {
+                        "type": "string",
+                        "description": "URN ID of the LinkedIn profile",
+                        "examples": [
+                            "urn:li:member:123456789",
+                            "urn:li:profile:ACoAABVRDyMBz5B7Luk8X9PZ0XYxKXkqQzA"
+                        ]
+                    }
+                },
+                "oneOf": [
+                    {"required": ["publicId"]},
+                    {"required": ["urnId"]}
+                ]
+            }
+        },
+        {
+            "name": "search-jobs",
+            "description": "Search for job postings with advanced filters",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "keywords": {
+                        "type": "string",
+                        "description": "Job search keywords",
+                        "examples": [
+                            "Senior Software Engineer",
+                            "AI Research Scientist"
+                        ]
+                    },
+                    "companies": {
+                        "type": "array",
+                        "items": {"type": "string"},
+                        "description": "Filter by companies",
+                        "examples": [
+                            ["OpenAI", "DeepMind", "Anthropic"]
+                        ]
+                    },
+                    "location": {
+                        "type": "string",
+                        "description": "Job location",
+                        "examples": [
+                            "Remote",
+                            "San Francisco, CA",
+                            "New York, NY"
+                        ]
+                    },
+                    "jobType": {
+                        "type": "array",
+                        "items": {"type": "string"},
+                        "description": "Job types to filter",
+                        "examples": [
+                            ["Full-time", "Contract"]
+                        ]
+                    }
+                },
+                "required": []
+            }
+        }
+    ],
+    "usage_guidelines": {
+        "authentication": "Requires valid LinkedIn Developer credentials",
+        "privacy_note": "Respect LinkedIn's terms of service and user privacy",
+        "rate_limits": "Be mindful of LinkedIn API rate limits"
+    }
+}
