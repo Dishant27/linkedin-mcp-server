@@ -174,14 +174,6 @@ linkedin-mcp-server/
 └── README.md            # Project documentation
 ```
 
-## 💡 Created By
-
-**Dishant Kumar**
-- Innovator of LinkedInMCP
-- Data Integration Specialist
-- LinkedIn: [Your LinkedIn Profile]
-- GitHub: [@Dishant27](https://github.com/Dishant27)
-
 ## 🤝 Contributing
 
 Inspired by the project? Contributions are welcome!
