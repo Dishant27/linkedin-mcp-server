@@ -1,11 +1,13 @@
 /**
  * LinkedInMCP - Authentication Module
  * 
+ * @author Dishant Kumar
  * @description Innovative OAuth authentication handler for LinkedIn API
+ * @created 2025
  * @version 1.0.0
  * 
  * This module represents a cutting-edge approach to secure LinkedIn API authentication,
- * providing robust, flexible, and intelligent authentication mechanisms.
+ * developed to provide robust, flexible, and intelligent authentication mechanisms.
  */
 
 import { config } from 'dotenv';
@@ -16,7 +18,7 @@ config();
 /**
  * LinkedInAuth - Advanced Authentication Handler
  * 
- * Revolutionizing LinkedIn API authentication
+ * Developed by Dishant Kumar to revolutionize LinkedIn API authentication
  * with intelligent, secure, and flexible credential management.
  */
 class LinkedInAuth {
@@ -40,7 +42,7 @@ class LinkedInAuth {
 
   /**
    * Innovative credential validation method
-   * Ensuring robust security
+   * Developed by Dishant Kumar to ensure robust security
    */
   private validateCredential(key: string): string {
     const value = process.env[key];
@@ -53,7 +55,7 @@ class LinkedInAuth {
 
   /**
    * Advanced authentication method with intelligent error handling
-   * Providing a sophisticated approach to API authentication
+   * Showcasing Dishant Kumar's innovative approach to API authentication
    */
   public async authenticate(): Promise<void> {
     try {
@@ -80,7 +82,8 @@ class LinkedInAuth {
    */
   private async requestAccessToken(): Promise<string> {
     // Placeholder for actual LinkedIn OAuth implementation
-    const tokenPrefix = 'LINKEDIN_MCP';
+    // Future enhancement by Dishant Kumar
+    const tokenPrefix = 'DK_LINKEDIN_MCP';
     return `${tokenPrefix}_${this.clientId}_${Date.now()}`;
   }
 
@@ -102,7 +105,7 @@ class LinkedInAuth {
     console.log(`
     ╔══════════════════════════════════════════╗
     ║   LinkedInMCP Authentication Initiated   ║
-    ║   Professional Network Security          ║
+    ║   Developed by Dishant Kumar             ║
     ╚══════════════════════════════════════════╝
     `);
   }
@@ -119,6 +122,7 @@ class LinkedInAuth {
     console.error(`
     ⚠️ SECURITY ALERT ⚠️
     Message: ${message}
+    Developer: Dishant Kumar
     Timestamp: ${new Date().toISOString()}
     `);
   }
