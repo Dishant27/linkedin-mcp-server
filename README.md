@@ -32,6 +32,28 @@ Recognizing the limitations of traditional LinkedIn API approaches, this solutio
 - Messaging Capabilities
 - Secure Authentication Workflow
 
+## 🔒 Security Framework
+
+The security model of LinkedInMCP implements multiple layers of protection:
+
+### Authentication Security
+- **OAuth 2.0 Implementation**: Industry-standard token-based authentication
+- **Token Refresh Management**: Automated handling of token expiration
+- **Credential Isolation**: Environment-based secret management
+- **Rate Limiting**: Protection against excessive API requests
+
+### Data Security
+- **End-to-End Encryption**: Secure data transmission
+- **Minimal Data Storage**: Processing data without persistent storage
+- **Selective Information Return**: Only returning requested data fields
+- **Automatic Data Sanitization**: Preventing injection vulnerabilities
+
+### Compliance Features
+- **GDPR Adherence**: Configurable data handling for European compliance
+- **API Terms Enforcement**: Built-in LinkedIn API usage policy compliance
+- **Audit Logging**: Comprehensive activity tracking for compliance reporting
+- **Data Governance Tools**: Simplifying regulatory compliance management
+
 ## 🚀 Comprehensive Setup Guide
 
 ### Prerequisites
