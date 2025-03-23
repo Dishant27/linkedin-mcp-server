@@ -62,7 +62,7 @@ LinkedInMCP enables powerful applications for business settings:
 
 ## 🔒 Security Framework
 
-The security model of LinkedInMCP implements multiple layers of protection:
+The enhanced security model of LinkedInMCP implements multiple layers of protection:
 
 ### Authentication Security
 - **OAuth 2.0 Implementation**: Industry-standard token-based authentication
