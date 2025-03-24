@@ -1,0 +1,48 @@
+{
+  "name": "linkedin-mcp-server",
+  "version": "1.0.0",
+  "description": "Model Context Protocol (MCP) server for LinkedIn API integration",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "test": "jest",
+    "lint": "eslint src --ext .ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dishant27/linkedin-mcp-server.git"
+  },
+  "keywords": [
+    "linkedin",
+    "mcp",
+    "model-context-protocol",
+    "api",
+    "llm",
+    "ai"
+  ],
+  "author": "Dishant Kumar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Dishant27/linkedin-mcp-server/issues"
+  },
+  "homepage": "https://github.com/Dishant27/linkedin-mcp-server#readme",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.4.0",
+    "axios": "^1.6.5",
+    "dotenv": "^16.3.1",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.11",
+    "@types/node": "^20.11.0",
+    "@typescript-eslint/eslint-plugin": "^6.18.1",
+    "@typescript-eslint/parser": "^6.18.1",
+    "eslint": "^8.56.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
