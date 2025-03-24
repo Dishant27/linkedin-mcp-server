@@ -11,6 +11,7 @@
  */
 
 import { config } from 'dotenv';
+import axios from 'axios';
 
 // Load environment variables
 config();
@@ -26,10 +27,13 @@ class LinkedInAuth {
   private clientId: string;
   private clientSecret: string;
   private accessToken: string | null = null;
+  private refreshToken: string | null = null;
+  private tokenExpiry: number | null = null;
 
   // Innovative authentication tracking
   private authAttempts: number = 0;
   private lastAuthTimestamp: number | null = null;
+  private authUrl = 'https://www.linkedin.com/oauth/v2';
 
   constructor() {
     // Advanced credential validation
@@ -62,8 +66,31 @@ class LinkedInAuth {
       // Increment authentication attempts
       this.authAttempts++;
 
-      // Simulate advanced authentication flow
-      this.accessToken = await this.requestAccessToken();
+      // Check if we have valid token
+      if (this.accessToken && this.tokenExpiry && Date.now() < this.tokenExpiry) {
+        console.log('🔑 Using existing valid token');
+        return;
+      }
+
+      // Check if we can refresh
+      if (this.refreshToken) {
+        await this.refreshAccessToken();
+        return;
+      }
+
+      // Request new token - For server-side application with no user interaction
+      // Using client credentials grant for server-to-server authentication
+      const response = await axios.post(`${this.authUrl}/accessToken`, null, {
+        params: {
+          grant_type: 'client_credentials',
+          client_id: this.clientId,
+          client_secret: this.clientSecret
+        }
+      });
+
+      this.accessToken = response.data.access_token;
+      this.refreshToken = response.data.refresh_token || null;
+      this.tokenExpiry = Date.now() + (response.data.expires_in * 1000);
 
       // Update authentication timestamp
       this.lastAuthTimestamp = Date.now();
@@ -77,14 +104,43 @@ class LinkedInAuth {
   }
 
   /**
-   * Intelligent access token request method
-   * Demonstrating advanced OAuth implementation concepts
+   * Refresh access token using refresh token
    */
-  private async requestAccessToken(): Promise<string> {
-    // Placeholder for actual LinkedIn OAuth implementation
-    // Future enhancement by Dishant Kumar
-    const tokenPrefix = 'DK_LINKEDIN_MCP';
-    return `${tokenPrefix}_${this.clientId}_${Date.now()}`;
+  private async refreshAccessToken(): Promise<void> {
+    try {
+      console.log('🔄 Refreshing access token');
+      
+      if (!this.refreshToken) {
+        throw new Error('No refresh token available');
+      }
+
+      const response = await axios.post(`${this.authUrl}/accessToken`, null, {
+        params: {
+          grant_type: 'refresh_token',
+          refresh_token: this.refreshToken,
+          client_id: this.clientId,
+          client_secret: this.clientSecret
+        }
+      });
+
+      this.accessToken = response.data.access_token;
+      // Some providers issue a new refresh token with each refresh
+      if (response.data.refresh_token) {
+        this.refreshToken = response.data.refresh_token;
+      }
+      this.tokenExpiry = Date.now() + (response.data.expires_in * 1000);
+      
+      console.log('🔄 Token refreshed successfully');
+    } catch (error) {
+      console.error('🚨 Token refresh failed', error);
+      // If refresh fails, reset tokens and force new authentication
+      this.accessToken = null;
+      this.refreshToken = null;
+      this.tokenExpiry = null;
+      
+      // Try to authenticate again
+      await this.authenticate();
+    }
   }
 
   /**
@@ -95,7 +151,26 @@ class LinkedInAuth {
       this.logSecurityAlert('Unauthorized access token request');
       throw new Error('🔒 Authentication Required: Call authenticate() first');
     }
+    
+    // Check if token is expiring soon (within 5 minutes)
+    if (this.tokenExpiry && (this.tokenExpiry - Date.now() < 5 * 60 * 1000)) {
+      // Schedule a token refresh but don't wait for it
+      this.refreshAccessToken().catch(error => {
+        console.error('🚨 Background token refresh failed', error);
+      });
+    }
+    
     return this.accessToken;
+  }
+
+  /**
+   * Check if token needs refresh
+   */
+  public isTokenExpiringSoon(): boolean {
+    if (!this.tokenExpiry) return true;
+    
+    // Check if token expires within 5 minutes
+    return (this.tokenExpiry - Date.now() < 5 * 60 * 1000);
   }
 
   /**
