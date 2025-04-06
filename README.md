@@ -1,4 +1,4 @@
-# LinkedInMCP: Revolutionizing LinkedIn API Interactions
+# <img src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" alt="LinkedIn Logo" width="32" height="32"> LinkedInMCP: Revolutionizing LinkedIn API Interactions
 
 ## 🚀 Comprehensive Setup Guide
 
