@@ -95,6 +95,8 @@ The comprehensive security model of LinkedInMCP implements multiple layers of pr
 2. Create a new application
 3. Obtain Client ID and Client Secret
 
+> **Important:** For detailed instructions on obtaining access tokens and authentication for LinkedIn API, refer to the official documentation: [Getting Access to LinkedIn API](https://learn.microsoft.com/en-us/linkedin/shared/authentication/getting-access)
+
 ### 2. Project Installation
 
 ```bash
