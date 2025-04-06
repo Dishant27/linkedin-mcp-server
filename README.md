@@ -122,6 +122,11 @@ npm start
 # 4. Return relevant profile details
 ```
 
+## 📖 Learn More
+Check out the detailed article explaining the concept and implementation:
+
+[LinkedIn MCP Server for LLMs](https://dishantraghav27.medium.com/linkedin-mcp-server-for-llms-c96fd9bb4e39)
+
 ## 🚀 Project Background
 
 **LinkedInMCP** is an innovative Model Context Protocol (MCP) server designed to transform how developers interact with LinkedIn's API. Born from the need for more flexible and powerful LinkedIn data integration, this project provides a robust, extensible framework for advanced LinkedIn data retrieval and interaction.
