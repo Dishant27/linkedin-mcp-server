@@ -1,87 +1,5 @@
 # LinkedInMCP: Revolutionizing LinkedIn API Interactions
 
-## 🚀 Project Background
-
-**LinkedInMCP** is an innovative Model Context Protocol (MCP) server designed to transform how developers interact with LinkedIn's API. Born from the need for more flexible and powerful LinkedIn data integration, this project provides a robust, extensible framework for advanced LinkedIn data retrieval and interaction.
-
-## 🌟 Project Vision
-
-Recognizing the limitations of traditional LinkedIn API approaches, this solution creates a more intelligent, context-aware method of working with professional network data.
-
-## ✨ Key Innovations
-
-- **Intelligent Context Management**: Leverage MCP's advanced context handling
-- **Secure, Typed Interactions**: Type-safe LinkedIn API interactions
-- **Extensible Architecture**: Easy to expand and customize
-- **Standardized Protocol**: Follows Model Context Protocol specifications
-
-## 🛠️ Technologies
-
-- TypeScript
-- Model Context Protocol
-- LinkedIn API
-- OAuth 2.0
-- Zod for Type Validation
-- Axios for HTTP Requests
-
-## 🔍 Core Capabilities
-
-- Advanced People Search
-- Detailed Profile Retrieval
-- Job Market Intelligence
-- Messaging Capabilities
-- Secure Authentication Workflow
-
-## 💼 Enterprise Use Cases
-
-LinkedInMCP enables powerful applications for business settings:
-
-### Talent Acquisition
-- **Candidate Sourcing**: Find qualified candidates matching specific skill and experience criteria
-- **Talent Pool Analysis**: Map talent distribution across industries and geographies
-- **Outreach Automation**: Streamline initial contact with potential candidates
-- **Competitive Intelligence**: Understand recruitment patterns at competitor organizations
-
-### Sales & Business Development
-- **Lead Generation**: Identify decision-makers at target companies
-- **Account-Based Marketing**: Build comprehensive profiles of key accounts
-- **Relationship Mapping**: Visualize connection networks within organizations
-- **Market Penetration Analysis**: Track industry adoption of products or services
-
-### Market Research
-- **Industry Trends**: Monitor employment shifts across sectors
-- **Skill Demand Analysis**: Track emerging skills and technologies
-- **Organizational Structure Insights**: Map reporting relationships and team compositions
-- **Geographic Movement Patterns**: Understand talent migration between regions
-
-### Integration Capabilities
-- **CRM Synchronization**: Update contact data from LinkedIn to CRM systems
-- **ATS Enhancement**: Enrich applicant tracking systems with LinkedIn data
-- **Business Intelligence Tools**: Feed LinkedIn data to dashboards and analytics platforms
-- **Custom Workflow Integration**: Add LinkedIn capabilities to internal tools via API
-
-## 🔒 Security Framework
-
-The comprehensive security model of LinkedInMCP implements multiple layers of protection:
-
-### Authentication Security
-- **OAuth 2.0 Implementation**: Industry-standard token-based authentication
-- **Token Refresh Management**: Automated handling of token expiration
-- **Credential Isolation**: Environment-based secret management
-- **Rate Limiting**: Protection against excessive API requests
-
-### Data Security
-- **End-to-End Encryption**: Secure data transmission
-- **Minimal Data Storage**: Processing data without persistent storage
-- **Selective Information Return**: Only returning requested data fields
-- **Automatic Data Sanitization**: Preventing injection vulnerabilities
-
-### Compliance Features
-- **GDPR Adherence**: Configurable data handling for European compliance
-- **API Terms Enforcement**: Built-in LinkedIn API usage policy compliance
-- **Audit Logging**: Comprehensive activity tracking for compliance reporting
-- **Data Governance Tools**: Simplifying regulatory compliance management
-
 ## 🚀 Comprehensive Setup Guide
 
 ### Prerequisites
@@ -203,6 +121,88 @@ npm start
 # 3. Filter by industry (Technology)
 # 4. Return relevant profile details
 ```
+
+## 🚀 Project Background
+
+**LinkedInMCP** is an innovative Model Context Protocol (MCP) server designed to transform how developers interact with LinkedIn's API. Born from the need for more flexible and powerful LinkedIn data integration, this project provides a robust, extensible framework for advanced LinkedIn data retrieval and interaction.
+
+## 🌟 Project Vision
+
+Recognizing the limitations of traditional LinkedIn API approaches, this solution creates a more intelligent, context-aware method of working with professional network data.
+
+## ✨ Key Innovations
+
+- **Intelligent Context Management**: Leverage MCP's advanced context handling
+- **Secure, Typed Interactions**: Type-safe LinkedIn API interactions
+- **Extensible Architecture**: Easy to expand and customize
+- **Standardized Protocol**: Follows Model Context Protocol specifications
+
+## 🛠️ Technologies
+
+- TypeScript
+- Model Context Protocol
+- LinkedIn API
+- OAuth 2.0
+- Zod for Type Validation
+- Axios for HTTP Requests
+
+## 🔍 Core Capabilities
+
+- Advanced People Search
+- Detailed Profile Retrieval
+- Job Market Intelligence
+- Messaging Capabilities
+- Secure Authentication Workflow
+
+## 💼 Enterprise Use Cases
+
+LinkedInMCP enables powerful applications for business settings:
+
+### Talent Acquisition
+- **Candidate Sourcing**: Find qualified candidates matching specific skill and experience criteria
+- **Talent Pool Analysis**: Map talent distribution across industries and geographies
+- **Outreach Automation**: Streamline initial contact with potential candidates
+- **Competitive Intelligence**: Understand recruitment patterns at competitor organizations
+
+### Sales & Business Development
+- **Lead Generation**: Identify decision-makers at target companies
+- **Account-Based Marketing**: Build comprehensive profiles of key accounts
+- **Relationship Mapping**: Visualize connection networks within organizations
+- **Market Penetration Analysis**: Track industry adoption of products or services
+
+### Market Research
+- **Industry Trends**: Monitor employment shifts across sectors
+- **Skill Demand Analysis**: Track emerging skills and technologies
+- **Organizational Structure Insights**: Map reporting relationships and team compositions
+- **Geographic Movement Patterns**: Understand talent migration between regions
+
+### Integration Capabilities
+- **CRM Synchronization**: Update contact data from LinkedIn to CRM systems
+- **ATS Enhancement**: Enrich applicant tracking systems with LinkedIn data
+- **Business Intelligence Tools**: Feed LinkedIn data to dashboards and analytics platforms
+- **Custom Workflow Integration**: Add LinkedIn capabilities to internal tools via API
+
+## 🔒 Security Framework
+
+The comprehensive security model of LinkedInMCP implements multiple layers of protection:
+
+### Authentication Security
+- **OAuth 2.0 Implementation**: Industry-standard token-based authentication
+- **Token Refresh Management**: Automated handling of token expiration
+- **Credential Isolation**: Environment-based secret management
+- **Rate Limiting**: Protection against excessive API requests
+
+### Data Security
+- **End-to-End Encryption**: Secure data transmission
+- **Minimal Data Storage**: Processing data without persistent storage
+- **Selective Information Return**: Only returning requested data fields
+- **Automatic Data Sanitization**: Preventing injection vulnerabilities
+
+### Compliance Features
+- **GDPR Adherence**: Configurable data handling for European compliance
+- **API Terms Enforcement**: Built-in LinkedIn API usage policy compliance
+- **Audit Logging**: Comprehensive activity tracking for compliance reporting
+- **Data Governance Tools**: Simplifying regulatory compliance management
 
 ## 📦 Generated Project Structure
 
