@@ -79,12 +79,19 @@ class LinkedInAuth {
       }
 
       // Request new token - For server-side application with no user interaction
-      // Using client credentials grant for server-to-server authentication
-      const response = await axios.post(`${this.authUrl}/accessToken`, null, {
-        params: {
-          grant_type: 'client_credentials',
-          client_id: this.clientId,
-          client_secret: this.clientSecret
+      // Using client credentials grant for server-to-server authentication.
+      // Credentials go in the POST body (application/x-www-form-urlencoded),
+      // never as URL query params, so the client_secret is not logged in URLs.
+      // Note: client_credentials (2-legged OAuth) is restricted; most developer
+      // apps cannot mint application tokens without LinkedIn partner access.
+      const body = new URLSearchParams({
+        grant_type: 'client_credentials',
+        client_id: this.clientId,
+        client_secret: this.clientSecret
+      });
+      const response = await axios.post(`${this.authUrl}/accessToken`, body.toString(), {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
         }
       });
 
@@ -114,12 +121,15 @@ class LinkedInAuth {
         throw new Error('No refresh token available');
       }
 
-      const response = await axios.post(`${this.authUrl}/accessToken`, null, {
-        params: {
-          grant_type: 'refresh_token',
-          refresh_token: this.refreshToken,
-          client_id: this.clientId,
-          client_secret: this.clientSecret
+      const body = new URLSearchParams({
+        grant_type: 'refresh_token',
+        refresh_token: this.refreshToken,
+        client_id: this.clientId,
+        client_secret: this.clientSecret
+      });
+      const response = await axios.post(`${this.authUrl}/accessToken`, body.toString(), {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
         }
       });
 

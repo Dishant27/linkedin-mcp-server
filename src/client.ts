@@ -49,7 +49,7 @@ class LinkedInClient {
   private auth: LinkedInAuth;
   private baseUrl = 'https://api.linkedin.com/v2';
   
-  // Innovative request tracking
+  // Local request counters for console logging only (nothing is sent outbound)
   private requestCount: number = 0;
   private lastRequestTimestamp: number | null = null;
 
@@ -64,7 +64,7 @@ class LinkedInClient {
    */
   private async makeRequest<T>(method: 'get' | 'post', endpoint: string, data?: any): Promise<T> {
     try {
-      // Increment request tracking
+      // Increment local request counter
       this.requestCount++;
       this.lastRequestTimestamp = Date.now();
 
@@ -80,8 +80,7 @@ class LinkedInClient {
         headers: {
           'Authorization': `Bearer ${this.auth.getAccessToken()}`,
           'Content-Type': 'application/json',
-          'x-li-format': 'json',
-          'X-DishantMCP-RequestID': `REQ_${this.requestCount}`
+          'x-li-format': 'json'
         },
         data
       });

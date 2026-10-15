@@ -7,6 +7,23 @@
 - LinkedIn Developer Account
 - MCP-Compatible LLM (Claude, OpenAI, etc.)
 
+
+## ⚠️ LinkedIn API access limitations (read this first)
+
+This MCP server talks to LinkedIn's official HTTP APIs. Several things people run into are **LinkedIn product / partner restrictions**, not bugs in the install steps:
+
+1. **`client_credentials` (2-legged OAuth) is not available to most developer apps.**  
+   LinkedIn docs state that apps cannot mint application tokens by default. A standard app that posts `grant_type=client_credentials` typically gets:
+   `access_denied` / *"This application is not allowed to create application tokens"*.  
+   That flow is reserved for approved LinkedIn enterprise / partner products. You usually need to contact a LinkedIn Relationship Manager or Business Development contact, or use the member **authorization-code** (3-legged) flow instead. See [Client Credential Flow (2-legged OAuth)](https://learn.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow).
+
+2. **There is no public general people-search endpoint at `/search/people`.**  
+   LinkedIn does **not** document a free, unrestricted "search any member by keyword / company / location" API for ordinary developer apps. The `search-people` tool in this repo currently calls `/v2/search/people`, which is **not** a documented public endpoint and will not work with a standard developer token.  
+   What LinkedIn *does* document today is limited profile / people APIs (mostly for the authenticated member) and a restricted **People Typeahead** API for organization-page `@mention` search of page followers ([docs](https://learn.microsoft.com/en-us/linkedin/marketing/community-management/shares/posts-atmention-search-api)). Broader people search requires a relevant LinkedIn partner product (for example Talent / Sales). Treat `search-people` as experimental / partner-only until this server is updated to a documented endpoint.
+
+3. **Send credentials in the POST body, never in the URL.**  
+   Token requests now use `Content-Type: application/x-www-form-urlencoded` with `client_id` / `client_secret` in the body, matching LinkedIn's OAuth guidance, so secrets are not appended as query parameters.
+
 ### 1. LinkedIn Developer Setup
 
 1. Go to [LinkedIn Developer Portal](https://www.linkedin.com/developers/)
