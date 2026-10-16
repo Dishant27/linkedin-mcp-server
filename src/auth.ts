@@ -68,7 +68,7 @@ class LinkedInAuth {
 
       // Check if we have valid token
       if (this.accessToken && this.tokenExpiry && Date.now() < this.tokenExpiry) {
-        console.log('🔑 Using existing valid token');
+        console.error('🔑 Using existing valid token');
         return;
       }
 
@@ -115,7 +115,7 @@ class LinkedInAuth {
    */
   private async refreshAccessToken(): Promise<void> {
     try {
-      console.log('🔄 Refreshing access token');
+      console.error('🔄 Refreshing access token');
       
       if (!this.refreshToken) {
         throw new Error('No refresh token available');
@@ -140,7 +140,7 @@ class LinkedInAuth {
       }
       this.tokenExpiry = Date.now() + (response.data.expires_in * 1000);
       
-      console.log('🔄 Token refreshed successfully');
+      console.error('🔄 Token refreshed successfully');
     } catch (error) {
       console.error('🚨 Token refresh failed', error);
       // If refresh fails, reset tokens and force new authentication
@@ -187,7 +187,7 @@ class LinkedInAuth {
    * Innovative logging methods to track authentication lifecycle
    */
   private logAuthInitialization() {
-    console.log(`
+    console.error(`
     ╔══════════════════════════════════════════╗
     ║   LinkedInMCP Authentication Initiated   ║
     ║   Developed by Dishant Kumar             ║
@@ -196,7 +196,7 @@ class LinkedInAuth {
   }
 
   private logAuthSuccess() {
-    console.log(`
+    console.error(`
     ✅ LinkedIn Authentication Successful
     🕒 Timestamp: ${new Date().toISOString()}
     🔑 Authentication Attempts: ${this.authAttempts}

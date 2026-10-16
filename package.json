@@ -1,6 +1,6 @@
 {
   "name": "linkedin-mcp-server",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Model Context Protocol (MCP) server for LinkedIn API integration",
   "main": "dist/index.js",
   "scripts": {
@@ -29,10 +29,10 @@
   },
   "homepage": "https://github.com/Dishant27/linkedin-mcp-server#readme",
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^0.4.0",
+    "@modelcontextprotocol/sdk": "^1.32.1",
     "axios": "^1.6.5",
     "dotenv": "^16.3.1",
-    "zod": "^3.22.4"
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@types/jest": "^29.5.11",

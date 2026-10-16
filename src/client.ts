@@ -10,7 +10,7 @@
  * developed to provide developers with powerful, context-aware API capabilities.
  */
 
-import LinkedInAuth from './auth';
+import LinkedInAuth from './auth.js';
 import axios from 'axios';
 
 // Innovative interface definitions with creator's unique touch
@@ -240,7 +240,7 @@ class LinkedInClient {
    * Demonstrating the creator's attention to observability
    */
   private logClientInitialization() {
-    console.log(`
+    console.error(`
     ╔══════════════════════════════════════════╗
     ║   LinkedInMCP Client Initialized         ║
     ║   Innovated by Dishant Kumar             ║
@@ -249,7 +249,7 @@ class LinkedInClient {
   }
 
   private logSuccessfulRequest(endpoint: string) {
-    console.log(`
+    console.error(`
     ✅ LinkedIn API Request Successful
     🔗 Endpoint: ${endpoint}
     🔢 Request Count: ${this.requestCount}
